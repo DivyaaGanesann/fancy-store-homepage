@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attha Fancy Store | Elegant Traditional Collections</title>
+<link rel="icon" href="images/logo1.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<style>
+:root {
+--primary-color: #2f2f2f;
+--accent-color: #d4af37;
+--bg-color: #fdfcfb;
+--text-color: #222;
+}
+body{
+margin:0;
+padding:0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 15px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icons a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 1.2rem;
+}
+
+nav {
+  background: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--text-color);
+  cursor: pointer;
+  position: relative;
+}
+
+nav li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+nav li:hover::after {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about {
+  padding: 20px 20px 60px 20px;
+  background-color:#f4f0ec;
+  text-align: center;
+}
+
+.about-header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-bottom: 50px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.about-card {
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  text-align: left;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.about-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.about-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color:  var(--accent-color));
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.about-card p, .about-card ul {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.about-card ul {
+  padding-left: 20px;
+}
+
+.about-card li {
+  margin-bottom: 5px;
+}
+
+.about-image {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 400px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 5;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-cta {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-about {
+  display: inline-block;
+  padding: 12px 25px;
+  min-width: 150px;
+  background-color: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-about:hover {
+  background-color: #b48b5c;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 769px) {
+  .about-container { padding-left: 150px; }
+  .about-card { margin-left: auto; max-width: 700px; }
+  .about-image {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 450px;
+    left: 0;
+    box-shadow: 10px 10px 40px rgba(0,0,0,0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .about { padding: 40px 20px; }
+  .about-header { margin-bottom: 20px; font-size: 1.8rem; }
+  .about-image { position: static; width: 100%; height: 300px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .about-card { padding: 30px 20px; }
+  .about-card h3 { font-size: 1.6rem; }
+}
+
+.services {
+  text-align: center;
+  padding: 2px 60px;
+}
+
+.services h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+.service-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #b48b5c;
+  transition: transform 0.4s ease;
+}
+
+.service-card img:hover {
+  transform: scale(1.2);
+}
+
+.service-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}
+
+.products {
+  padding: 20px 20px;
+  text-align: center;
+  background-color: #fdfcfb;
+}
+
+.products h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.product-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-horizontal 60s linear infinite;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 220px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.btn-buy {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.btn-buy:hover {
+  background-color: #b48b5c;
+}
+
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) { .product-track { animation-duration: 120s; } }
+@media (max-width: 480px) { .product-track { animation-duration: 150s; } }
+
+.product-grid:hover .product-track { animation-play-state: paused; }
+
+.gallery {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.gallery h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px 70px;
+  background:#f4f0ec ;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.info-box {
+  flex: 1;
+  padding: 5px;
+  text-align: left;
+}
+
+.info-box h3 {
+  color: var(--accent-color);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+footer {
+  background: var(--primary-color);
+  color: #ddd;
+  padding: 0px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.footer-top h4 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.footer-top a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-top a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 16px;
+  border-top: 1px solid #555;
+  margin-top: 30px;
+}
+
+.footer-bottom .left i,
+.footer-bottom .right i {
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.footer-bottom .left i:hover,
+.footer-bottom .right i:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom .center {
+  text-align: center;
+  flex: 1;
+}
+
+@media (max-width: 992px) {
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero-text h2 { font-size: 2.2rem; }
+  .service-grid { gap: 20px; }
+  nav ul { gap: 25px; }
+}
+
+@media (max-width: 600px) {
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+/* Base dropdown styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f0f0f0;
+  min-width: 180px;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+/* submenu items with side dropdown */
+.submenu {
+  position: relative;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* side dropdown - initially hidden */
+.side-dropdown {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* show to the right of parent li */
+  background: #dcdcdc;
+  min-width: 160px;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* show side dropdown on hover of submenu item */
+.submenu:hover > .side-dropdown {
+  display: block;
+}
+
+/* side dropdown items */
+.side-dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.side-dropdown li:hover {
+  background: #bbb;
+}
+
+/* style for dropdown menu items */
+.dropdown-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: #ccc;
+}
+
+nav{
+position:relative;
+z-index:10;
+}
+
+li img {
+    width: 50px;  /* adjust as needed */
+    height: 25px; /* keep aspect ratio or set fixed height */
+    object-fit: contain;
+	 vertical-align: middle;
+	 position:relative;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="images/logo.png" alt="Aatha Fancy Store Logo"></div>
+    <div class="search-bar">
+	
+    <input type="text" placeholder="What are you looking for ?">
+  </div>
+  <div class="header-icons">
+    <a href="#"><i class="fa-brands fa-instagram" style="color:#fff; margin-right:15px;"></i></a>
+    <a href="#"><i class="fa-regular fa-user" style="color:#fff; margin-right:15px;"></i></a>
+    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#fff;"></i></a>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+	<li class="dropdown">For Kids <i class="fa-solid fa-caret-down"></i>
+
+	<ul class="dropdown-menu">
+	<li>Toys</li>
+	<li>Fancy Dresses</li>
+	<li>Cartoon Stickers</li>
+	</ul>
+	</li>
+    <li class="dropdown">
+  Cosmetics <i class="fa-solid fa-caret-down"></i>
+  <ul class="dropdown-menu">
+    <li>Lipsticks & Lip Gloss</li>
+    <li>Eyeliners & Kajal</li>
+    <li>Nail Polish (Glitter & Matte)</li>
+    <li>Compact Powder</li>
+    <li>Makeup Kits</li>
+  </ul>
+</li>
+
+<li class="dropdown">
+  Stationary <i class="fa-solid fa-caret-down"></i>
+  <ul class="dropdown-menu">
+    <li>Notebooks</li>
+	<li>Diaries</li>
+    <li>Fancy Pens</li>
+    <li>Highlighters&Markers</li>
+    <li>Pencil Cases&Pouches</li>
+  </ul>
+</li>
+
+	<li class="dropdown">Jewellery <i class="fa-solid fa-caret-down"></i> 
+	<ul class="dropdown-menu">
+	<li>Necklaces</li>
+	<li>Rings</li>
+	<li>Bridal Jewellery</li>
+	<li>Earing</li>
+	<li>Watches</li>
+	</ul>
+	</li>
+	
+	
+	
+	
+    <li class="dropdown">Services <i class="fa-solid fa-caret-down"></i>
+  <ul class="dropdown-menu">
+    <li class="submenu">
+      Fancy jewellery <i class="fa-solid fa-caret-right" style="float: right;"></i>
+      <ul class="side-dropdown">
+        <li>Necklaces</li>
+        <li>Bracelets</li>
+        <li>Earrings</li>
+      </ul>
+    </li>
+    <li class="submenu">
+      Fancy Stationary <i class="fa-solid fa-caret-right" style="float: right;"></i>
+      <ul class="side-dropdown">
+        <li>Notebooks</li>
+        <li>Pen Sets</li>
+        <li>Diaries</li>
+      </ul>
+    </li>
+    <li class="submenu">
+	Gifts <i class="fa-solid fa-caret-right" style="float: right;"></i>
+	<ul class="side-dropdown">
+	<li>Love/Anniversary</li>
+	<li>Birthday</li>
+	<li>Festive</li>
+	<li>God Theme</li>
+	</ul></li>
+    <li class="submenu">Toys <i class="fa-solid fa-caret-right" style="float: right;"></i>
+	<ul class="side-dropdown">
+	<li>Soft Toys</li>
+	<li>Battery Toys</li>
+	<li>Dolls</li>
+	<li>Remote Control</li>
+	<li>Puzzles</li>
+	</ul>
+	</li>
+    <li class="submenu">Return Gifts <i class="fa-solid fa-caret-right" style="float: right;"></i>
+	<ul class="side-dropdown">
+	<li>Eco-Friendly</li>
+	<li>Mini Bags</li>
+	<li>Home Decors</li>
+	<li>Personalized Gifts</li>
+	</ul>
+	</li>
+    <li class="submenu">KeyChain <i class="fa-solid fa-caret-right" style="float: right;"></i>
+	<ul class="side-dropdown">
+	<li>Leather Keychains</li>
+    <li>Cartoon Keychains</li>
+    <li>Photo Keychains</li>
+    <li>LED Keychains</li>
+	</ul>
+	</li>
+  </ul>
+</li>
+
+    <li class="dropdown">Training <i class="fa-solid fa-caret-down "></i>
+	<ul class="dropdown-menu">
+	<li>Hand Embroidary</li>
+	<li>Machine Embroidary</li>
+	<li>Glass painting</li>
+	<li>Sand painting</li>
+	</ul>
+	</li>
+	<li>Gallery</li>
+    <li>Contact</li>
+	<li><img src="images/bag.png" alt="bag icon" id="shakeImg" /> Sale</li>
+  </ul>
+  
+</nav>
+
+
+<section class="hero">
+  <div class="owl-carousel owl-theme">
+    <div class="item">
+      <img src="images/jewellerymaking.jpg" alt="">
+      <div class="hero-text">
+        <h2>Attha Fancy Store</h2>
+        <p>Traditional Collections & Tailoring Training</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/glasspainting.jpg" alt="">
+      <div class="hero-text">
+        <h2>Craft & Cultural Dress</h2>
+        <p>Serving Karaikudi with Pride</p>
+      </div>
+    </div>
+<div class="item">
+  <img src="images/gifts1.jpg" alt="">
+  <div class="hero-text">
+    <h2>Gifts & Decoratives</h2>
+    <p>Unique Gifts for Every Celebration</p>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="services">
+  <h3>Our Services</h3>
+  <div class="service-grid">
+    <div class="service-card"><img src="images/craft.jpg" alt="Craft"><h4>Craft</h4></div>
+    <div class="service-card"><img src="images/beautician.jpg" alt="Beautician"><h4>Beautician</h4></div>
+    <div class="service-card"><img src="images/cultural_dress.jpg" alt="Cultural Dress"><h4>Cultural Dress</h4></div>
+    <div class="service-card"><img src="images/jewellerymaking1.jpg" alt="Jewellery Making"><h4>Jewellery Making</h4></div>
+    <div class="service-card"><img src="images/tailoring.jpg" alt="Tailoring Training"><h4>Tailoring Training</h4></div>
+    <div class="service-card"><img src="images/toys.jpg" alt="Toys"><h4>Toys</h4></div>
+  </div>
+</section><br><br>
+
+<section class="about">
+  <h2 class="about-header">Fancy Collections and Tailoring Training</h2>
+  <div class="about-container">
+    <div class="about-image"><img src="images/download.jpg" alt="Collection of fancy goods and craft supplies"></div>
+    <div class="about-card">
+      <p><b>Attha Fancy Store</b> is your vibrant source for awesome collections and essential skill training right here in Karaikudi. We're happy to serve your city with pleasure!</p>
+      <p>Our Fancy Collections & Services:</p>
+      <ul>
+        <li><b>Collections:</b> Craft Things, Cultural Dress, Covering, Gift Items, and Toys.</li>
+        <li><b>Art & Supplies:</b> Beautician supplies, Artist Color, and Glass Painting materials.</li>
+      </ul>
+      <p>Professional Training Programs:</p>
+      <p>Empower yourself with our expert-led classes:</p>
+      <ul>
+        <li><b>Tailoring Training</b></li>
+        <li><b>Jewellery Making</b></li>
+        <li><b>Hand & Machine Embroidering</b></li>
+      </ul>
+      <div class="about-cta"><a href="#services" class="btn-about">Contact Us Today</a></div>
+    </div>
+  </div>
+</section>
+<section class="products">
+  <h3>Fancy Dresses</h3>
+  <div class="product-grid">
+    <div class="product-track">
+      <div class="product-card"><img src="images/dress1.jpg" alt="Fancy Dress 1"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress2.jpg" alt="Fancy Dress 2"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress3.jpg" alt="Fancy Dress 3"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress4.jpg" alt="Fancy Dress 4"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress5.jpg" alt="Fancy Dress 5"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress6.jpg" alt="Fancy Dress 6"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress7.jpg" alt="Fancy Dress 7"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress8.jpg" alt="Fancy Dress 8"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress9.jpg" alt="Fancy Dress 9"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress10.jpg" alt="Fancy Dress 10"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress1.jpg" alt="Fancy Dress 1"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress2.jpg" alt="Fancy Dress 2"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress3.jpg" alt="Fancy Dress 3"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress4.jpg" alt="Fancy Dress 4"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress5.jpg" alt="Fancy Dress 5"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress6.jpg" alt="Fancy Dress 6"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress7.jpg" alt="Fancy Dress 7"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress8.jpg" alt="Fancy Dress 8"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress9.jpg" alt="Fancy Dress 9"><a href="#" class="btn-buy">Buy</a></div>
+      <div class="product-card"><img src="images/dress10.jpg" alt="Fancy Dress 10"><a href="#" class="btn-buy">Buy</a></div>
+    </div>
+  </div>
+</section>
+<section class="gallery">
+  <h3>Gallery</h3>
+  <div class="gallery-grid">
+    <img src="images/gallery1.jpg" alt="">
+    <img src="images/gallery3.jpg" alt="">
+    <img src="images/gallery2.jpg" alt="">
+    <img src="images/gallery4.jpg" alt="">
+  </div>
+</section>
+<section class="info-section">
+  <div class="info-box">
+    <h3>Contact Us</h3>
+    <p>For any queries, please email us at atthafancy@gmail.com</p>
+  </div>
+  <div class="info-box">
+    <h3>Return Policy</h3>
+    <p>Easy returns in 7 days — original condition only.</p>
+  </div>
+  <div class="info-box">
+    <h3>Shipping Policy</h3>
+    <p>Fast, secure shipping across India — within 2–3 days.</p>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <h4>Customer Care</h4>
+      <a href="#">FAQs</a><br>
+      <a href="#">Track Your Order</a><br>
+      <a href="#">Cancellation Policy</a><br>
+      <a href="#">Feedback</a><br>
+      <a href="#">Help Center</a><br>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#">About Us</a><br>
+      <a href="#">Locate Stores</a><br>
+      <a href="#">Careers</a><br>
+      <a href="#">Contact</a><br>
+      <a href="#">Site Map</a><br>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">Shipping</a><br>
+      <a href="#">Return Policy</a><br>
+      <a href="#">Privacy Policy</a><br>
+      <a href="#">Terms and Services</a><br>
+      <a href="#">Grievances</a><br>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><i class="fa-brands fa-whatsapp"></i> +91 98424 49119</p>
+      <p><i class="fa-solid fa-phone"></i> +04565 239355</p>
+      <p><i class="fa-regular fa-envelope"></i> aathafancy@gmail.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="left">Social : 
+      <i class="fa-brands fa-google"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <div class="center">©2025 Attha Fancy Store</div>
+    <div class="right">
+      <i class="fa-brands fa-paypal"></i>
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-google-pay"></i>
+      <i class="fa-brands fa-cc-apple-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    items:1,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:2000,
+    autoplayHoverPause:true,
+    dots:true
+  });
+});
+
+function shake(element, distance, times, speed) {
+    let i = 0;
+    function doShake() {
+      if (i < times) {
+        element.animate({ left: -distance }, speed)
+               .animate({ left: distance }, speed, doShake);
+        i++;
+      } else {
+        element.animate({ left: 0 }, speed, function() {
+          i = 0; // reset counter
+          setTimeout(doShake, 2000); // wait 2 seconds before shaking again
+        });
+      }
+    }
+    doShake();
+  }
+
+  $(document).ready(function() {
+    shake($("#shakeImg"), 5, 6, 150);
+  });
+</script>
+</body>
+</html>
